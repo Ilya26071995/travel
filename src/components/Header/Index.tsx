@@ -4,9 +4,11 @@ import { Navigation } from "../Navigation/Index";
 
 const Header = () => {
   return (
-    <div>
+    <div className={s.container}>
       <div>
-        <img src="../img/logo.svg" alt="LOGO" />
+        <a href="#">
+          <img className={s.logo} src="../img/logo.svg" alt="LOGO" />
+        </a>
       </div>
       <Navigation />
     </div>
