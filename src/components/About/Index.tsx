@@ -5,9 +5,7 @@ const About = () => {
   return (
     <div>
       <div className={s.container}>
-        <p className={s.text}>
-          Куда бы вы ни отправились, мы вас туда доставим
-        </p>
+        <p className={s.text}>Wherever you go, we will take you there</p>
       </div>
     </div>
   );

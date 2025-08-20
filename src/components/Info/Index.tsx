@@ -3,10 +3,10 @@ import s from "./Info.module.scss";
 
 const Info = () => {
   return (
-    <div>
-      <p>
-        Выбирайте любимые страны и города, составляйте маршруты, в любое удобное
-        время
+    <div className={s.container}>
+      <p className={s.text}>
+        Choose your favorite countries and cities, create routes, at any
+        convenient time
       </p>
     </div>
   );

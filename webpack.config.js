@@ -24,7 +24,7 @@ module.exports = {
         use: ["ts-loader"],
       },
       {
-        test: /\.(scss|css)$/,
+        test: /\.(sass|css|scss)$/i,
         exclude: /node_modules/,
         use: [
           production ? MiniCssExtractPlugin.loader : "style-loader",

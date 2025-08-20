@@ -4,23 +4,23 @@ import { Link } from "react-router-dom";
 import s from "./Navigation.module.scss";
 
 const NAVIGATION = [
-  { name: "Поездки", link: "#" },
-  { name: "Бронирования", link: "#" },
-  { name: "Заметки", link: "#" },
-  { name: "Профиль", link: "#" },
-  { name: "Настройки", link: "#" },
+  { name: "Trips", link: "/login" },
+  { name: "Reservations", link: "/login" },
+  { name: "Notes", link: "/notes" },
+  { name: "Profile", link: "/login" },
+  { name: "Settings", link: "/login" },
 ];
 
 const Navigation = () => {
   return (
     <div>
       <ul className={s.list}>
-        {NAVIGATION.map(({ name, link }: NavType, index) => {
+        {NAVIGATION.map(({ name, link }, index) => {
           return (
             <li className={s.item} key={index}>
-              <a href={link} className={s.link}>
+              <Link to={link} className={s.link}>
                 {name}
-              </a>
+              </Link>
             </li>
           );
         })}

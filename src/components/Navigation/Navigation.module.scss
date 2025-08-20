@@ -5,13 +5,16 @@
 .link {
   text-decoration: none;
   color: #fff;
-  font-family: "Courier New", Courier, monospace;
-  transition: color 0.3s ease-in-out;
+  font-family: "Quicksand", sans-serif;
+  transition: border 0.3s ease-in-out;
   font-size: 20px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 0 10px;
 }
 
 .link:hover {
-  color: black;
+  border: 2px solid white;
 }
 
 .list {
