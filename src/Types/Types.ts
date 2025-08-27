@@ -3,8 +3,13 @@ export interface NavType {
   link?: string;
 }
 
-export interface Notes {
+export interface NotesType {
   title: string;
   text: string;
   id?: string;
+}
+
+export interface ButtonType {
+  title: string;
+  click: () => void;
 }

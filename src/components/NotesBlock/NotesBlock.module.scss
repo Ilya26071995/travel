@@ -1,6 +1,8 @@
 .container {
   padding: 50px;
   font-family: "Quicksand", sans-serif;
+  display: flex;
+  gap: 50px;
 }
 
 .flex {
@@ -11,10 +13,28 @@
 }
 
 .name,
-.text {
+.text,
+.button {
   border-radius: 5px;
+}
+
+.title {
+  font-size: 30px;
+  font-weight: 1000;
+  margin: 0;
+  padding: 0;
 }
 
 .text {
   height: 200px;
+}
+
+.button {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
 }

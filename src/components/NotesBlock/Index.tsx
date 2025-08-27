@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import s from "./NotesBlock.module.scss";
-import { Notes } from "../../Types/Types";
+import { NotesType } from "../../Types/Types";
 import { Note } from "../Note/Index";
+import { Button } from "../Button/Index";
 
 const NotesBlock = () => {
-  const [notes, setNotes] = useState<Notes[]>([]);
+  const [notes, setNotes] = useState<NotesType[]>([]);
   const [newNote, setNewNote] = useState({ title: "", text: "" });
 
   const addNote = () => {
@@ -17,8 +18,8 @@ const NotesBlock = () => {
 
   return (
     <div className={s.container}>
-      <h1 className={s.title}>Add note</h1>
       <div className={s.flex}>
+        <h1 className={s.title}>Add note</h1>
         <input
           type="text"
           placeholder="Title"
@@ -32,7 +33,7 @@ const NotesBlock = () => {
           className={s.text}
           placeholder="Text"
         />
-        <button onClick={addNote}>Add note</button>
+        <Button title="Add note" click={addNote} />
       </div>
       <div>
         {notes.map((note) => (
