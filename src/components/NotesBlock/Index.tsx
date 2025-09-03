@@ -34,8 +34,8 @@ const NotesBlock = () => {
           <label>
             <input
               className={s.name}
-              type="text"
-              placeholder="title"
+              type='text'
+              placeholder='title'
               value={note.title}
               onChange={(e) => setNote({ ...note, title: e.target.value })}
             />
@@ -43,25 +43,21 @@ const NotesBlock = () => {
           <label>
             <textarea
               className={s.text}
-              placeholder="text"
+              placeholder='text'
               value={note.text}
               onChange={(e) => setNote({ ...note, text: e.target.value })}
             />
           </label>
-          <Button
-            title="Add note"
-            type="submit"
-            click={() => dispatch(addNotes(note))}
-          />
+          <Button title='Add note' type='submit' click={() => dispatch(addNotes(note))} />
         </form>
       </div>
 
       {Notes.map((not: NotesType, index: number) => (
-        <div key={index} id={Date.now()} className={s.note}>
+        <div key={index} id={Date.now().toString()} className={s.note}>
           <p className={s.noteTitle}>{not.title}</p>
           <h3 className={s.noteText}>{not.text}</h3>
           <div className={s.button}>
-            <Button title="Remove" click={() => dispatch(removeNotes(not))} />
+            <Button title='Remove' click={() => dispatch(removeNotes(not))} />
           </div>
         </div>
       ))}
