@@ -60,9 +60,8 @@ const NotesBlock = () => {
         <div key={index} id={Date.now()} className={s.note}>
           <p className={s.noteTitle}>{not.title}</p>
           <h3 className={s.noteText}>{not.text}</h3>
-          <div className={s.buttons}>
+          <div className={s.button}>
             <Button title="Remove" click={() => dispatch(removeNotes(not))} />
-            <Button title="Edit" />
           </div>
         </div>
       ))}
