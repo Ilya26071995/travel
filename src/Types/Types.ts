@@ -6,10 +6,11 @@ export interface NavType {
 export interface NotesType {
   title: string;
   text: string;
-  id?: string;
+  id?: number;
 }
 
 export interface ButtonType {
   title: string;
-  click: () => void;
+  click?: () => void;
+  type?: string;
 }

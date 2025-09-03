@@ -13,9 +13,10 @@
 }
 
 .name,
-.text,
-.button {
+.text {
   border-radius: 5px;
+  width: 100%;
+  padding: 2px 5px;
 }
 
 .title {
@@ -23,18 +24,45 @@
   font-weight: 1000;
   margin: 0;
   padding: 0;
+  padding-bottom: 20px;
 }
 
 .text {
   height: 200px;
 }
 
-.button {
-  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+.note {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin: auto 0;
+  border: 1px solid black;
+  border-radius: 5px;
+  min-height: 150px;
+  min-width: 200px;
+  max-width: 250px;
+  text-align: center;
 }
 
-.button:hover {
-  background-color: black;
-  color: white;
-  cursor: pointer;
+.noteTitle {
+  font-weight: 800;
+  font-size: 20px;
+  margin: 0;
+  padding: 20px 0;
+}
+
+.noteText {
+  font-size: 15px;
+  white-space: wrap;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 20px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 10px;
+  border-top: 1px solid black;
 }

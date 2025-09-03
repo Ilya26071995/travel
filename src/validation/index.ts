@@ -14,9 +14,4 @@ const FormSchema = yup.object({
     .matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/),
 });
 
-const NotesSchema = yup.object({
-  title: yup.string(),
-  text: yup.string(),
-});
-
-export { FormSchema, NotesSchema };
+export { FormSchema };
