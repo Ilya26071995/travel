@@ -4,8 +4,6 @@ import { NotesType } from "../../Types/Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
 import { addNotes, removeNotes } from "../../store/notes/notes.slice";
-import { RootState } from "@reduxjs/toolkit/query";
-import { number } from "yup";
 
 const NotesBlock = () => {
   const dispatch = useDispatch();
@@ -55,9 +53,8 @@ const NotesBlock = () => {
           />
         </form>
       </div>
-
       {Notes.map((not: NotesType, index: number) => (
-        <div key={index} id={Date.now()} className={s.note}>
+        <div key={index} className={s.note}>
           <p className={s.noteTitle}>{not.title}</p>
           <h3 className={s.noteText}>{not.text}</h3>
           <div className={s.button}>
