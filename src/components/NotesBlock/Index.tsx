@@ -54,7 +54,7 @@ const NotesBlock = () => {
         </form>
       </div>
       {Notes.map((not: NotesType, index: number) => (
-        <div key={index} className={s.note}>
+        <div key={index} id={Date.now()} className={s.note}>
           <p className={s.noteTitle}>{not.title}</p>
           <h3 className={s.noteText}>{not.text}</h3>
           <div className={s.button}>
