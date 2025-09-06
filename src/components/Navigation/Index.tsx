@@ -1,5 +1,5 @@
 import React from "react";
-import { NavType } from "../../Types/Types";
+import { NavType } from "../../Types";
 import { Link } from "react-router-dom";
 import s from "./Navigation.module.scss";
 
@@ -8,7 +8,7 @@ const NAVIGATION = [
   { name: "Reservations", link: "/login" },
   { name: "Notes", link: "/notes" },
   { name: "Profile", link: "/login" },
-  { name: "Settings", link: "/login" },
+  { name: "Settings", link: "/settings" },
 ];
 
 const Navigation = () => {

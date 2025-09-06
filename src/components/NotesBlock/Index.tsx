@@ -1,13 +1,13 @@
-import React, { useState, useId } from "react";
+import React, { FormEventHandler, useState } from "react";
 import s from "./NotesBlock.module.scss";
-import { NotesType } from "../../Types/Types";
+import { NotesType, RootState } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
 import { addNotes, removeNotes } from "../../store/notes/notes.slice";
 
 const NotesBlock = () => {
   const dispatch = useDispatch();
-  const { Notes } = useSelector((state: any) => state);
+  const { Notes } = useSelector((state: RootState) => state);
 
   const [note, setNote] = useState({
     title: "",
@@ -15,8 +15,9 @@ const NotesBlock = () => {
     id: Date.now(),
   });
 
-  const handelSubmit = (e: any) => {
+  const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
+    () => dispatch(addNotes(note));
     setNote({
       title: "",
       text: "",
@@ -28,7 +29,7 @@ const NotesBlock = () => {
     <div className={s.container}>
       <div>
         <h1 className={s.title}>Add note</h1>
-        <form onSubmit={handelSubmit} className={s.flex}>
+        <form onSubmit={handleSubmit} className={s.flex}>
           <label>
             <input
               className={s.name}
@@ -54,7 +55,7 @@ const NotesBlock = () => {
         </form>
       </div>
       {Notes.map((not: NotesType, index: number) => (
-        <div key={index} id={Date.now()} className={s.note}>
+        <div key={index} className={s.note}>
           <p className={s.noteTitle}>{not.title}</p>
           <h3 className={s.noteText}>{not.text}</h3>
           <div className={s.button}>

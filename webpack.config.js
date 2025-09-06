@@ -7,7 +7,7 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const production = process.env.NODE_ENV === "production";
 
 module.exports = {
-  entry: { myAppName: path.resolve(__dirname, "./src/index.tsx") },
+  entry: "./src/Index.tsx",
   stats: {
     children: true,
   },

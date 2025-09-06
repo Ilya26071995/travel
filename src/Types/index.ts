@@ -12,5 +12,14 @@ export interface NotesType {
 export interface ButtonType {
   title: string;
   click?: () => void;
-  type?: string;
+  type?: "button" | "submit" | "reset";
+}
+
+export interface RootState {
+  Notes: [{ title: string; text: string; id?: number }];
+}
+
+export interface FormType {
+  name: string;
+  mail: string;
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import s from "./Footer.module.scss";
-import { NavType } from "../../Types/Types";
+import { NavType } from "../../Types";
 
 const LINKS = [
   { name: "about us", link: "#" },

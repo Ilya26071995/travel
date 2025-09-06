@@ -5,6 +5,7 @@ import { Route, BrowserRouter as Router } from "react-router-dom";
 import { Home } from "./pages/home/Index";
 import { Login } from "./pages/login/Index";
 import { Notes } from "./pages/notes/Index";
+import { Settings } from "./pages/settings";
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         </Route>
         <Route exact path="/notes">
           <Notes />
+        </Route>
+        <Route exact path="/settings">
+          <Settings />
         </Route>
       </Router>
     </div>

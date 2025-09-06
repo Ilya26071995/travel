@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { NotesType } from "../../Types/Types";
+import { NotesType } from "../../Types";
 
 const initialState: NotesType[] = [];
 
@@ -11,8 +11,7 @@ export const notesSlice = createSlice({
       state.push(payload);
     },
     removeNotes: (state, { payload }) => {
-      state.filter((item) => item.id !== payload.id);
-      console.log(payload);
+      return state.filter((item) => item.id !== payload.id);
     },
   },
 });

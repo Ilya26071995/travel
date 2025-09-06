@@ -3,6 +3,7 @@ import s from "./LoginForm.module.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormSchema } from "../../validation";
+import { FormType } from "../../Types";
 
 const LoginForm = () => {
   const {
@@ -14,7 +15,7 @@ const LoginForm = () => {
     mode: "onChange",
     resolver: yupResolver(FormSchema),
   });
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: FormType) => {
     console.log(data);
     reset();
   };
@@ -22,12 +23,12 @@ const LoginForm = () => {
   const [disabled, setDisabled] = useState(true);
 
   const clickFun = () => {
-    setDisabled((prevdisabled) => !prevdisabled);
+    setDisabled((disabled) => !disabled);
   };
 
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState<string>("");
 
-  const handleInputChange = (event: any) => {
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setInputValue(event.target.value);
   };
 
@@ -53,7 +54,7 @@ const LoginForm = () => {
             {...register("mail")}
             onChange={handleInputChange}
           />
-          <p>{errors.mail?.message}</p>
+          <p className={s.error}>{errors.mail?.message}</p>
         </label>
         <input
           className={s.button}
