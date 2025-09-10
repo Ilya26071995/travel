@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormSchema } from "../../validation";
 import { FormType } from "../../Types";
+import { Button } from "../Button/Index";
 
 const LoginForm = () => {
   const {

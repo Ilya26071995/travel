@@ -3,7 +3,7 @@ import { ImageBlock } from "../../components/ImageBlock/Index";
 import { Footer } from "../../components/Footer/Index";
 import { MyInfo } from "../../components/MyInfo";
 
-const Settings = () => {
+const Profile = () => {
   return (
     <div>
       <ImageBlock />
@@ -13,4 +13,4 @@ const Settings = () => {
   );
 };
 
-export { Settings };
+export { Profile };

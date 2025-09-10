@@ -1,13 +1,13 @@
 import React, { FormEventHandler, useState } from "react";
 import s from "./NotesBlock.module.scss";
-import { NotesType, RootState } from "../../Types";
+import { NoteState, NotesType } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
 import { addNotes, removeNotes } from "../../store/notes/notes.slice";
 
 const NotesBlock = () => {
   const dispatch = useDispatch();
-  const { Notes } = useSelector((state: RootState) => state);
+  const { Notes } = useSelector((state: NoteState) => state);
 
   const [note, setNote] = useState({
     title: "",

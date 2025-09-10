@@ -15,11 +15,23 @@ export interface ButtonType {
   type?: "button" | "submit" | "reset";
 }
 
-export interface RootState {
+export interface NoteState {
   Notes: [{ title: string; text: string; id?: number }];
+}
+
+export interface InfoState {
+  Info: { name: string; age: string; city: string; text: string; type: number };
 }
 
 export interface FormType {
   name: string;
   mail: string;
+}
+
+export interface MyInfoType {
+  name: string;
+  age: string;
+  city: string;
+  text: string;
+  type?: number;
 }

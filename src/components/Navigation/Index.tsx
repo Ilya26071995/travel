@@ -7,7 +7,7 @@ const NAVIGATION = [
   { name: "Trips", link: "/login" },
   { name: "Reservations", link: "/login" },
   { name: "Notes", link: "/notes" },
-  { name: "Profile", link: "/login" },
+  { name: "Profile", link: "/profile" },
   { name: "Settings", link: "/settings" },
 ];
 
