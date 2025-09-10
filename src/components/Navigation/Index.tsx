@@ -9,6 +9,7 @@ const NAVIGATION = [
   { name: "Notes", link: "/notes" },
   { name: "Profile", link: "/profile" },
   { name: "Settings", link: "/settings" },
+  { name: "Login", link: "/login" },
 ];
 
 const Navigation = () => {

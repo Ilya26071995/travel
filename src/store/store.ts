@@ -1,9 +1,11 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import notesSlice from "./notes/notes.slice";
 import myInfoSlice from "./notes/MyInfo.slice";
+import loginSlice from "./notes/login.slice";
 const reducers = combineReducers({
   Notes: notesSlice,
   Info: myInfoSlice,
+  Form: loginSlice,
 });
 
 export const store = configureStore({

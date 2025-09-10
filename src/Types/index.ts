@@ -23,9 +23,14 @@ export interface InfoState {
   Info: { name: string; age: string; city: string; text: string; type: number };
 }
 
+export interface MyFormState {
+  Form: { name: string; mail: string; type: boolean };
+}
+
 export interface FormType {
   name: string;
   mail: string;
+  type: boolean;
 }
 
 export interface MyInfoType {
