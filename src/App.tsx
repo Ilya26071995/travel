@@ -5,6 +5,7 @@ import { Home } from "./pages/home/Index";
 import { Login } from "./pages/login/Index";
 import { Notes } from "./pages/notes/Index";
 import { Profile } from "./pages/profile";
+import { Settings } from "./pages/settings";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
         </Route>
         <Route exact path="/profile">
           <Profile />
+        </Route>
+        <Route exact path="/settings">
+          <Settings />
         </Route>
       </Router>
     </div>

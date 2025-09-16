@@ -6,7 +6,8 @@ import { FormSchema } from "../../validation";
 import { MyFormState } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
-import { EnterForm } from "../../store/notes/login.slice";
+import { EnterForm, ExitForm } from "../../store/notes/login.slice";
+import { t } from "i18next";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -33,26 +34,30 @@ const LoginForm = () => {
   };
 
   const clickFun = () => {
-    setMyForm({ ...myForm, type: true });
     dispatch(EnterForm(myForm));
     console.log(myForm);
   };
 
+  const exitFun = () => {
+    dispatch(ExitForm(myForm));
+  };
+
   return Form.type === true ? (
-    <div className={s.container}>
-      <h3 className={s.miniTitle}> Your login</h3>
+    <div className={s.success}>
+      <h3 className={s.miniTitle}> {t("Ylogin")}</h3>
       <span className={s.miniText}>{Form.mail}</span>
-      <h3 className={s.miniTitle}> Your name</h3>
+      <h3 className={s.miniTitle}> {t("Yname")}</h3>
       <span className={s.miniText}>{Form.name}</span>
+      <Button title={t("exit")} click={exitFun}></Button>
     </div>
   ) : (
     <div className={s.container}>
-      <h2 className={s.title}>Authorization</h2>
+      <h2 className={s.title}>{t("authorization")}</h2>
       <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
         <label className={s.label}>
-          Your name
+          {t("Yname")}
           <input
-            placeholder="Enter name"
+            placeholder={t("Yname")}
             className={s.input}
             type="text"
             {...register("name")}
@@ -61,9 +66,9 @@ const LoginForm = () => {
           <p className={s.error}>{errors.name?.message}</p>
         </label>
         <label className={s.label}>
-          Your mail
+          {t("Ymail")}
           <input
-            placeholder="Enter E-mail"
+            placeholder={t("Ymail")}
             className={s.input}
             type="text"
             {...register("mail")}
@@ -71,7 +76,7 @@ const LoginForm = () => {
           />
           <p className={s.error}>{errors.mail?.message}</p>
         </label>
-        <Button click={clickFun} type="submit" title="Send"></Button>
+        <Button click={clickFun} type="submit" title={t("send")}></Button>
       </form>
     </div>
   );

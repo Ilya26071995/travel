@@ -1,12 +1,7 @@
 import React from "react";
 import s from "./Footer.module.scss";
 import { NavType } from "../../Types";
-
-const LINKS = [
-  { name: "about us", link: "#" },
-  { name: "questions", link: "#" },
-  { name: "partners", link: "#" },
-];
+import { t } from "i18next";
 
 const SOCIAL = [
   { img: "../img/vk.svg", link: "https://www.vk.com", alt: "vk" },
@@ -19,6 +14,12 @@ const SOCIAL = [
 ];
 
 const Footer = () => {
+  const LINKS = [
+    { name: t("aboutUs"), link: "#" },
+    { name: t("questions"), link: "#" },
+    { name: t("partners"), link: "#" },
+  ];
+
   return (
     <div className={s.container}>
       <ul className={s.links}>

@@ -84,3 +84,17 @@
   margin: 0;
   padding: 0;
 }
+
+.success {
+  display: flex;
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+  margin: 50px auto;
+  gap: 30px;
+  border: 1px solid black;
+  border-radius: 5px;
+  max-width: 500px;
+  padding: 50px 0;
+  text-align: center;
+  align-items: center;
+}

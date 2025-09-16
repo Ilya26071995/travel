@@ -13,8 +13,12 @@ export const loginSlice = createSlice({
       mail: payload.mail,
       type: (payload.type = true),
     }),
+    ExitForm: (state, { payload }) => ({
+      ...state,
+      type: (payload.type = false),
+    }),
   },
 });
 
-export const { EnterForm } = loginSlice.actions;
+export const { EnterForm, ExitForm } = loginSlice.actions;
 export default loginSlice.reducer;

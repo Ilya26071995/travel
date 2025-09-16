@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useTransition } from "react";
 import { NavType } from "../../Types";
 import { Link } from "react-router-dom";
 import s from "./Navigation.module.scss";
-
-const NAVIGATION = [
-  { name: "Trips", link: "/login" },
-  { name: "Reservations", link: "/login" },
-  { name: "Notes", link: "/notes" },
-  { name: "Profile", link: "/profile" },
-  { name: "Settings", link: "/settings" },
-  { name: "Login", link: "/login" },
-];
+import { useTranslation } from "react-i18next";
+import i18next from "../../i18n";
+i18next.t("my.key");
 
 const Navigation = () => {
+  const { i18n, t } = useTranslation();
+
+  const NAVIGATION = [
+    { name: t("home"), link: "/" },
+    { name: t("trips"), link: "/login" },
+    { name: t("reservations"), link: "/login" },
+    { name: t("notes"), link: "/notes" },
+    { name: t("profile"), link: "/profile" },
+    { name: t("settings"), link: "/settings" },
+    { name: t("login"), link: "/login" },
+  ];
+
   return (
     <div>
       <ul className={s.list}>

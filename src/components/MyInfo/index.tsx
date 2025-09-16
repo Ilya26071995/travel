@@ -6,7 +6,8 @@ import { MyInfoSchema } from "../../validation";
 import { InfoState, MyInfoType } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
-import { EnterProfile } from "../../store/notes/MyInfo.slice";
+import { EnterProfile } from "../../store/notes/mymyInfo.slice";
+import { t } from "i18next";
 
 const MyInfo = () => {
   const dispatch = useDispatch();
@@ -45,17 +46,17 @@ const MyInfo = () => {
     <div className={s.bigContainer}>
       <ul className={s.profile}>
         <li className={s.item}>
-          <h3 className={s.head}>Name:</h3> {Info.name}
+          <h3 className={s.head}>{t("name")}</h3> {Info.name}
         </li>
         <li className={s.item}>
           {" "}
-          <h3 className={s.head}>Age:</h3> {Info.age}
+          <h3 className={s.head}>{t("age")}</h3> {Info.age}
         </li>
         <li className={s.item}>
-          <h3 className={s.head}>City:</h3> {Info.city}
+          <h3 className={s.head}>{t("city")}</h3> {Info.city}
         </li>
         <li className={s.item}>
-          <h3 className={s.head}>Tell us about yourself:</h3>
+          <h3 className={s.head}>{t("yourself")}</h3>
           {Info.text}
         </li>
       </ul>
@@ -63,55 +64,55 @@ const MyInfo = () => {
   ) : (
     <div className={s.bigContainer}>
       <div className={s.container}>
-        <h2 className={s.title}>Information about you</h2>
+        <h2 className={s.title}>{t("information")}</h2>
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <label className={s.label}>
-            Your name
+            {t("Yname")}
             <input
               {...register("name")}
               className={s.input}
               type="text"
-              placeholder="Enter name"
+              placeholder={t("Yname")}
               value={profile.name}
               onChange={(e) => setProfile({ ...profile, name: e.target.value })}
             ></input>
             <p className={s.error}>{errors.name?.message}</p>
           </label>
           <label className={s.label}>
-            Your age
+            {t("Yage")}
             <input
               {...register("age")}
               className={s.input}
               type="text"
-              placeholder="Enter age"
+              placeholder={t("Yage")}
               value={profile.age}
               onChange={(e) => setProfile({ ...profile, age: e.target.value })}
             ></input>
             <p className={s.error}>{errors.age?.message}</p>
           </label>
           <label className={s.label}>
-            Your city
+            {t("Ycity")}
             <input
               {...register("city")}
               className={s.input}
               type="text"
-              placeholder="Enter city"
+              placeholder={t("Ycity")}
               value={profile.city}
               onChange={(e) => setProfile({ ...profile, city: e.target.value })}
             ></input>
             <p className={s.error}>{errors.text?.message}</p>
           </label>
           <label className={s.label}>
-            Tell us about yourself
+            {t("yourself")}
             <textarea
               {...register("text")}
               className={s.textarea}
-              placeholder="Tell us about yourself"
+              placeholder={t("yourself")}
               value={profile.text}
               onChange={(e) => setProfile({ ...profile, text: e.target.value })}
             ></textarea>
           </label>
-          <Button title="Send" type="submit" click={click} />
+          <Button title={t("send")} type="submit" click={click} />
         </form>
       </div>
     </div>

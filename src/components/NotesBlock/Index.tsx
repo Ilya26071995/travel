@@ -4,6 +4,7 @@ import { NoteState, NotesType } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
 import { addNotes, removeNotes } from "../../store/notes/notes.slice";
+import { t } from "i18next";
 
 const NotesBlock = () => {
   const dispatch = useDispatch();
@@ -28,13 +29,13 @@ const NotesBlock = () => {
   return (
     <div className={s.container}>
       <div>
-        <h1 className={s.title}>Add note</h1>
+        <h1 className={s.title}>{t("addNote")}</h1>
         <form onSubmit={handleSubmit} className={s.flex}>
           <label>
             <input
               className={s.name}
               type="text"
-              placeholder="title"
+              placeholder={t("title")}
               value={note.title}
               onChange={(e) => setNote({ ...note, title: e.target.value })}
             />
@@ -42,16 +43,18 @@ const NotesBlock = () => {
           <label>
             <textarea
               className={s.text}
-              placeholder="text"
+              placeholder={t("text")}
               value={note.text}
               onChange={(e) => setNote({ ...note, text: e.target.value })}
             />
           </label>
-          <Button
-            title="Add note"
-            type="submit"
-            click={() => dispatch(addNotes(note))}
-          />
+          <div className={s.add}>
+            <Button
+              title={t("addNote")}
+              type="submit"
+              click={() => dispatch(addNotes(note))}
+            />
+          </div>
         </form>
       </div>
       {Notes.map((not: NotesType, index: number) => (
@@ -59,7 +62,10 @@ const NotesBlock = () => {
           <p className={s.noteTitle}>{not.title}</p>
           <h3 className={s.noteText}>{not.text}</h3>
           <div className={s.button}>
-            <Button title="Remove" click={() => dispatch(removeNotes(not))} />
+            <Button
+              title={t("remove")}
+              click={() => dispatch(removeNotes(not))}
+            />
           </div>
         </div>
       ))}
