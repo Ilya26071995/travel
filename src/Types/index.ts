@@ -15,6 +15,10 @@ export interface ButtonType {
   type?: "button" | "submit" | "reset";
 }
 
+export interface TripsState {
+  Trips: [{ city: string; date: string; hotel: string; id?: number }];
+}
+
 export interface NoteState {
   Notes: [{ title: string; text: string; id?: number }];
 }
@@ -39,4 +43,11 @@ export interface MyInfoType {
   city: string;
   text: string;
   type?: number;
+}
+
+export interface TripType {
+  city: string;
+  date: Date;
+  hotel: string;
+  id?: number;
 }

@@ -3,7 +3,7 @@ import s from "./NotesBlock.module.scss";
 import { NoteState, NotesType } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
-import { addNotes, removeNotes } from "../../store/notes/notes.slice";
+import { addNotes, removeNotes } from "../../store/slices/notes.slice";
 import { t } from "i18next";
 
 const NotesBlock = () => {
@@ -28,7 +28,7 @@ const NotesBlock = () => {
 
   return (
     <div className={s.container}>
-      <div>
+      <div className={s.noteForm}>
         <h1 className={s.title}>{t("addNote")}</h1>
         <form onSubmit={handleSubmit} className={s.flex}>
           <label>
@@ -59,8 +59,8 @@ const NotesBlock = () => {
       </div>
       {Notes.map((not: NotesType, index: number) => (
         <div key={index} className={s.note}>
-          <p className={s.noteTitle}>{not.title}</p>
-          <h3 className={s.noteText}>{not.text}</h3>
+          <h3 className={s.noteTitle}>{not.title}</h3>
+          <p className={s.noteText}>{not.text}</p>
           <div className={s.button}>
             <Button
               title={t("remove")}

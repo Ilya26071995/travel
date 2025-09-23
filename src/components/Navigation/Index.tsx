@@ -11,8 +11,8 @@ const Navigation = () => {
 
   const NAVIGATION = [
     { name: t("home"), link: "/" },
-    { name: t("trips"), link: "/login" },
-    { name: t("reservations"), link: "/login" },
+    { name: t("trips"), link: "/trips" },
+    { name: t("reservations"), link: "/reservations" },
     { name: t("notes"), link: "/notes" },
     { name: t("profile"), link: "/profile" },
     { name: t("settings"), link: "/settings" },

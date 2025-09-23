@@ -6,7 +6,7 @@ import { MyInfoSchema } from "../../validation";
 import { InfoState, MyInfoType } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
-import { EnterProfile } from "../../store/notes/mymyInfo.slice";
+import { EnterProfile } from "../../store/slices/mymyInfo.slice";
 import { t } from "i18next";
 
 const MyInfo = () => {

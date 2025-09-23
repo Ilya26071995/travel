@@ -1,16 +1,15 @@
 import React from "react";
 import { ImageBlock } from "../../components/ImageBlock/Index";
 import { Footer } from "../../components/Footer/Index";
-import { SettingsBlock } from "../../components/SettingsBlock";
 
-const Settings = () => {
+const Reservations = () => {
   return (
     <div>
       <ImageBlock />
-      <SettingsBlock />
+
       <Footer />
     </div>
   );
 };
 
-export { Settings };
+export { Reservations };

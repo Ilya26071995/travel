@@ -1,7 +1,9 @@
 .container {
-  margin: 0 50px;
   display: flex;
-  justify-content: space-between;
+  padding: 0 50px;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid black;
 }
 
 .links,
@@ -10,6 +12,10 @@
   padding: 0;
   display: flex;
   gap: 10px;
+}
+
+.social {
+  margin-left: auto;
 }
 
 .img {
@@ -31,4 +37,8 @@
 
 .link:hover {
   border: 1px solid black;
+}
+
+.logo {
+  width: 100px;
 }

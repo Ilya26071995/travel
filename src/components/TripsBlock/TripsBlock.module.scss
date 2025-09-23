@@ -1,0 +1,84 @@
+.container {
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  position: relative;
+  padding: 50px;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 350px;
+  border: 1px solid black;
+  text-align: center;
+  align-items: center;
+  padding: 20px 0;
+  border-radius: 5px;
+  background-color: white;
+  position: absolute;
+  top: 400px;
+  left: 500px;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  font-size: 20px;
+}
+
+.input {
+  width: 300px;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+}
+
+.trip {
+  display: flex;
+  gap: 20px;
+}
+
+.miniTrip {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-top: 20px;
+  width: 200px;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.button {
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.block {
+  display: none;
+}
+
+.modal {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  top: -570px;
+  left: 0;
+  height: 1000px;
+}

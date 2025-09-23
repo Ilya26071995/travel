@@ -6,7 +6,7 @@ import { FormSchema } from "../../validation";
 import { MyFormState } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
-import { EnterForm, ExitForm } from "../../store/notes/login.slice";
+import { EnterForm, ExitForm } from "../../store/slices/login.slice";
 import { t } from "i18next";
 
 const LoginForm = () => {

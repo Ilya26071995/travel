@@ -1,11 +1,14 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import notesSlice from "./notes/notes.slice";
-import myInfoSlice from "./notes/mymyInfo.slice";
-import loginSlice from "./notes/login.slice";
+import notesSlice from "./slices/notes.slice";
+import myInfoSlice from "./slices/mymyInfo.slice";
+import loginSlice from "./slices/login.slice";
+import tripsSlice from "./slices/trip.slice";
+
 const reducers = combineReducers({
   Notes: notesSlice,
   Info: myInfoSlice,
   Form: loginSlice,
+  Trips: tripsSlice,
 });
 
 export const store = configureStore({

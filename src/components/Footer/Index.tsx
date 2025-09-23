@@ -2,6 +2,7 @@ import React from "react";
 import s from "./Footer.module.scss";
 import { NavType } from "../../Types";
 import { t } from "i18next";
+import { Link } from "react-router-dom";
 
 const SOCIAL = [
   { img: "../img/vk.svg", link: "https://www.vk.com", alt: "vk" },
@@ -22,6 +23,9 @@ const Footer = () => {
 
   return (
     <div className={s.container}>
+      <Link to="/">
+        <img className={s.logo} src="../img/logo.svg" alt="LOGO" />
+      </Link>
       <ul className={s.links}>
         {LINKS.map(({ name, link }: NavType, index) => {
           return (
