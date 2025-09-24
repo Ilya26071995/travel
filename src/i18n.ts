@@ -52,6 +52,9 @@ const resources = {
       hotel: "Hotel",
       fullPage: "Full page",
       addTrip: "Add trip",
+      registration: "Registration",
+      account: "do not have an account",
+      password: "Password",
     },
   },
   ru: {
@@ -104,6 +107,9 @@ const resources = {
       hotel: "Отель",
       fullPage: "Полная страница",
       addTrip: "Добавить поездку",
+      registration: "Регистрация",
+      account: "не имеете аккаунта",
+      password: "Пароль",
     },
   },
 };

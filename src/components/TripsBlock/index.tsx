@@ -6,8 +6,6 @@ import { addTrip, removeTrip } from "../../store/slices/trip.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { TripsState } from "../../Types";
 import { Link } from "react-router-dom";
-import cn from "classnames";
-//этот бок добавляет карточку путешествия по принципу заметки, нужно сделать подробную страницу поездки с добавлением заметок о ней
 
 const TripsBlock = () => {
   const [trip, setTrip] = useState({
@@ -47,7 +45,7 @@ const TripsBlock = () => {
       <div>
         <Button title={t("addTrip")} click={showModal}></Button>
       </div>
-      <div className={cn(modal ? s.modal : s.block)}>
+      <div className={modal ? s.modal : s.block}>
         <form className={s.form} onSubmit={handleSubmit}>
           <h2 className={s.title}>{t("infoTrip")}</h2>
           <label className={s.label}>

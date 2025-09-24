@@ -6,10 +6,10 @@ import { Login } from "./pages/login/Index";
 import { Notes } from "./pages/notes/Index";
 import { Profile } from "./pages/profile";
 import { Settings } from "./pages/settings";
-import { SettingsBlock } from "./components/SettingsBlock";
+
 import { Trips } from "./pages/trips";
 import { Reservations } from "./pages/reservations";
-import { BigPageTrip } from "./pages/bigPageTrip";
+import { RegistrationPage } from "./pages/registrationPage";
 
 function App() {
   return (
@@ -36,8 +36,8 @@ function App() {
         <Route exact path="/reservations">
           <Reservations />
         </Route>
-        <Route exact path="/bigtrip">
-          <BigPageTrip />
+        <Route exact path="/registration">
+          <RegistrationPage />
         </Route>
       </Router>
     </div>

@@ -8,6 +8,7 @@ import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
 import { EnterForm, ExitForm } from "../../store/slices/login.slice";
 import { t } from "i18next";
+import { Link } from "react-router-dom";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
@@ -77,6 +78,12 @@ const LoginForm = () => {
           <p className={s.error}>{errors.mail?.message}</p>
         </label>
         <Button click={clickFun} type="submit" title={t("send")}></Button>
+        <div className={s.reg}>
+          <h3>{t("account")}?</h3>
+          <Link className={s.link} to="/registration">
+            ...registration
+          </Link>
+        </div>
       </form>
     </div>
   );

@@ -1,0 +1,31 @@
+.container {
+  padding: 50px;
+  font-family: "Quicksand", sans-serif;
+}
+
+.title {
+  margin: 0;
+  padding: 0;
+
+  text-align: center;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 5px;
+  width: 400px;
+  margin: 0 auto;
+  padding: 20px 0;
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  gap: 20px;
+  text-align: center;
+}
