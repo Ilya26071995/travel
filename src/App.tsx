@@ -9,7 +9,6 @@ import { Settings } from "./pages/settings";
 
 import { Trips } from "./pages/trips";
 import { Reservations } from "./pages/reservations";
-import { RegistrationPage } from "./pages/registrationPage";
 
 function App() {
   return (
@@ -35,9 +34,6 @@ function App() {
         </Route>
         <Route exact path="/reservations">
           <Reservations />
-        </Route>
-        <Route exact path="/registration">
-          <RegistrationPage />
         </Route>
       </Router>
     </div>

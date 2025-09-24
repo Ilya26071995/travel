@@ -34,4 +34,13 @@ const MyInfoSchema = yup.object({
   text: yup.string().min(10, "Min 10 letters").max(100, "Max 100 letters"),
 });
 
-export { FormSchema, MyInfoSchema };
+const RegistrationSchema = yup.object({
+  mail: yup
+    .string()
+    .required("enter e-mail")
+    .matches(/^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/)
+    .typeError("Enter valid email"),
+  password: yup.string().min(8, "Min 8 letters"),
+});
+
+export { FormSchema, MyInfoSchema, RegistrationSchema };

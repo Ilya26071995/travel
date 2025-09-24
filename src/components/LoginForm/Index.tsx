@@ -9,10 +9,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { EnterForm, ExitForm } from "../../store/slices/login.slice";
 import { t } from "i18next";
 import { Link } from "react-router-dom";
+import { RegistrationForm } from "../RegistrationForm";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const { Form } = useSelector((state: MyFormState) => state);
+
+  const [reg, setReg] = useState(false);
 
   const [myForm, setMyForm] = useState({
     name: "",
@@ -43,7 +46,13 @@ const LoginForm = () => {
     dispatch(ExitForm(myForm));
   };
 
-  return Form.type === true ? (
+  const RegAcc = () => {
+    setReg(!reg);
+  };
+
+  return reg ? (
+    <RegistrationForm />
+  ) : Form.type === true ? (
     <div className={s.success}>
       <h3 className={s.miniTitle}> {t("Ylogin")}</h3>
       <span className={s.miniText}>{Form.mail}</span>
@@ -80,9 +89,7 @@ const LoginForm = () => {
         <Button click={clickFun} type="submit" title={t("send")}></Button>
         <div className={s.reg}>
           <h3>{t("account")}?</h3>
-          <Link className={s.link} to="/registration">
-            ...registration
-          </Link>
+          <Button title={t("registration")} click={RegAcc} />
         </div>
       </form>
     </div>
