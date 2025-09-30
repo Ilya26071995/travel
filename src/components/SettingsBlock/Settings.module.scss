@@ -1,12 +1,38 @@
 .container {
   font-family: "Quicksand", sans-serif;
-  margin: 29px auto;
-  border: 1px solid black;
-  border-radius: 5px;
-  width: 300px;
   text-align: center;
-  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  padding: 50px 0;
+}
 
+.darkContainer {
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  color: white;
+  background-color: black;
+  padding: 50px 0;
+}
+
+.block {
+  border: 1px solid black;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+.darkBlock {
+  border: 1px solid white;
+  width: 300px;
+  margin: 0 auto;
+  padding: 20px 0;
   display: flex;
   flex-direction: column;
   gap: 50px;

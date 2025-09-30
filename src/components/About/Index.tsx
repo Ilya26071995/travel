@@ -1,11 +1,16 @@
 import React from "react";
 import s from "./About.module.scss";
 import { t } from "i18next";
+import { useDispatch, useSelector } from "react-redux";
+import { ThemeState } from "../../Types";
 
 const About = () => {
+  const dispatch = useDispatch();
+  const { Theme } = useSelector((state: ThemeState) => state);
+
   return (
     <div>
-      <div className={s.container}>
+      <div className={Theme.type ? s.container : s.containerDark}>
         <p className={s.text}>{t("about")}</p>
       </div>
     </div>

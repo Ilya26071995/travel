@@ -3,17 +3,19 @@ import s from "./LoginForm.module.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { FormSchema } from "../../validation";
-import { MyFormState } from "../../Types";
+import { MyFormState, ThemeState } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
 import { EnterForm, ExitForm } from "../../store/slices/login.slice";
 import { t } from "i18next";
 import { Link } from "react-router-dom";
 import { RegistrationForm } from "../RegistrationForm";
+import Input from "react-select/dist/declarations/src/components/Input";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
   const { Form } = useSelector((state: MyFormState) => state);
+  const { Theme } = useSelector((state: ThemeState) => state);
 
   const [reg, setReg] = useState(false);
 
@@ -53,22 +55,27 @@ const LoginForm = () => {
   return reg ? (
     <RegistrationForm />
   ) : Form.type === true ? (
-    <div className={s.success}>
-      <h3 className={s.miniTitle}> {t("Ylogin")}</h3>
-      <span className={s.miniText}>{Form.mail}</span>
-      <h3 className={s.miniTitle}> {t("Yname")}</h3>
-      <span className={s.miniText}>{Form.name}</span>
-      <Button title={t("exit")} click={exitFun}></Button>
+    <div className={Theme.type ? s.container : s.containerDark}>
+      <div className={Theme.type ? s.success : s.successDark}>
+        <h3 className={s.miniTitle}> {t("Ylogin")}</h3>
+        <span className={s.miniText}>{Form.mail}</span>
+        <h3 className={s.miniTitle}> {t("Yname")}</h3>
+        <span className={s.miniText}>{Form.name}</span>
+        <Button title={t("exit")} click={exitFun}></Button>
+      </div>
     </div>
   ) : (
-    <div className={s.container}>
+    <div className={Theme.type ? s.container : s.containerDark}>
       <h2 className={s.title}>{t("authorization")}</h2>
-      <form onSubmit={handleSubmit(onSubmit)} className={s.form}>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={Theme.type ? s.form : s.formDark}
+      >
         <label className={s.label}>
           {t("Yname")}
           <input
             placeholder={t("Yname")}
-            className={s.input}
+            className={Theme.type ? s.input : s.inputDark}
             type="text"
             {...register("name")}
             onChange={(e) => setMyForm({ ...myForm, name: e.target.value })}
@@ -79,7 +86,7 @@ const LoginForm = () => {
           {t("Ymail")}
           <input
             placeholder={t("Ymail")}
-            className={s.input}
+            className={Theme.type ? s.input : s.inputDark}
             type="text"
             {...register("mail")}
             onChange={(e) => setMyForm({ ...myForm, mail: e.target.value })}

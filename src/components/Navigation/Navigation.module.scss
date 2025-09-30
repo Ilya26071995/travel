@@ -17,6 +17,21 @@
   border: 2px solid white;
 }
 
+.linkDark {
+  text-decoration: none;
+  color: black;
+  font-family: "Quicksand", sans-serif;
+  transition: border 0.3s ease-in-out;
+  font-size: 20px;
+  border: 2px solid transparent;
+  border-radius: 20px;
+  padding: 0 10px;
+}
+
+.linkDark:hover {
+  border: 2px solid black;
+}
+
 .list {
   display: flex;
   gap: 20px;

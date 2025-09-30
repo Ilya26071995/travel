@@ -4,7 +4,7 @@ import { Button } from "../Button/Index";
 import { t } from "i18next";
 import { addTrip, removeTrip } from "../../store/slices/trip.slice";
 import { useDispatch, useSelector } from "react-redux";
-import { TripsState } from "../../Types";
+import { ThemeState, TripsState } from "../../Types";
 import { Link } from "react-router-dom";
 
 const TripsBlock = () => {
@@ -17,6 +17,7 @@ const TripsBlock = () => {
 
   const dispatch = useDispatch();
   const { Trips } = useSelector((state: TripsState) => state);
+  const { Theme } = useSelector((state: ThemeState) => state);
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
@@ -41,17 +42,20 @@ const TripsBlock = () => {
   };
 
   return (
-    <div className={s.container}>
+    <div className={Theme.type ? s.container : s.containerDark}>
       <div>
         <Button title={t("addTrip")} click={showModal}></Button>
       </div>
       <div className={modal ? s.modal : s.block}>
-        <form className={s.form} onSubmit={handleSubmit}>
+        <form
+          className={Theme.type ? s.form : s.formDark}
+          onSubmit={handleSubmit}
+        >
           <h2 className={s.title}>{t("infoTrip")}</h2>
           <label className={s.label}>
             {t("city")}
             <input
-              className={s.input}
+              className={Theme.type ? s.input : s.inputDark}
               type="text"
               placeholder={t("city")}
               onChange={(e) => setTrip({ ...trip, city: e.target.value })}
@@ -61,7 +65,7 @@ const TripsBlock = () => {
           <label className={s.label}>
             {t("date")}
             <input
-              className={s.input}
+              className={Theme.type ? s.input : s.inputDark}
               type="text"
               placeholder={t("date")}
               onChange={(e) => setTrip({ ...trip, date: e.target.value })}
@@ -71,7 +75,7 @@ const TripsBlock = () => {
           <label className={s.label}>
             {t("hotel")}
             <input
-              className={s.input}
+              className={Theme.type ? s.input : s.inputDark}
               type="text"
               placeholder={t("hotel")}
               onChange={(e) => setTrip({ ...trip, hotel: e.target.value })}
@@ -83,7 +87,7 @@ const TripsBlock = () => {
       </div>
       <div className={s.trip}>
         {Trips.map((item, index) => (
-          <div key={index} className={s.miniTrip}>
+          <div key={index} className={Theme.type ? s.miniTrip : s.miniTripDark}>
             <div className={s.item}>
               <h3>{t("city")}:</h3>
               <p>{item.city}</p>

@@ -1,9 +1,10 @@
-import React, { useTransition } from "react";
-import { NavType } from "../../Types";
+import React, { useEffect, useState, useTransition } from "react";
+import { NavType, ThemeState } from "../../Types";
 import { Link } from "react-router-dom";
 import s from "./Navigation.module.scss";
 import { useTranslation } from "react-i18next";
 import i18next from "../../i18n";
+import { useDispatch, useSelector } from "react-redux";
 i18next.t("my.key");
 
 const Navigation = () => {
@@ -19,13 +20,16 @@ const Navigation = () => {
     { name: t("login"), link: "/login" },
   ];
 
+  const dispatch = useDispatch();
+  const { Theme } = useSelector((state: ThemeState) => state);
+
   return (
     <div>
       <ul className={s.list}>
         {NAVIGATION.map(({ name, link }, index) => {
           return (
             <li className={s.item} key={index}>
-              <Link to={link} className={s.link}>
+              <Link to={link} className={Theme.type ? s.link : s.linkDark}>
                 {name}
               </Link>
             </li>

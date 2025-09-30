@@ -6,6 +6,15 @@
   border-top: 1px solid black;
 }
 
+.containerDark {
+  display: flex;
+  padding: 0 50px;
+  align-items: center;
+  gap: 20px;
+  border-top: 1px solid white;
+  background-color: black;
+}
+
 .links,
 .social {
   list-style: none;
@@ -27,16 +36,32 @@
   border-radius: 20px;
   padding: 0 3px;
   text-decoration: none;
-  color: black;
   font-family: "Quicksand", sans-serif;
   font-size: 20px;
   border: 1px solid transparent;
   transition: border 0.3s ease-in-out;
   padding: 0 10px;
+  color: black;
 }
 
 .link:hover {
   border: 1px solid black;
+}
+
+.linkDark {
+  border: 1px solid transparent;
+  border-radius: 20px;
+  padding: 0 3px;
+  text-decoration: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 20px;
+  border: 1px solid transparent;
+  transition: border 0.3s ease-in-out;
+  padding: 0 10px;
+  color: white;
+}
+.linkDark:hover {
+  border: 1px solid white;
 }
 
 .logo {

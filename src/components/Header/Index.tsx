@@ -1,11 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import s from "./Header.module.scss";
 import { Navigation } from "../Navigation/Index";
 import { Link } from "react-router-dom";
 
 const Header = () => {
+  const [backgroundColor, setBackgroundColor] = useState("transparent");
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 50) {
+        setBackgroundColor("rgba(220, 212, 212, 0.6)");
+      } else {
+        setBackgroundColor("transparent");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  const navStyle = {
+    backgroundColor: backgroundColor,
+    padding: "10px",
+    transition: "background-color 0.3s ease",
+  };
+
   return (
-    <div className={s.container}>
+    <div className={s.container} style={navStyle}>
       <div>
         <Link to="/">
           <img className={s.logo} src="../img/logo.svg" alt="LOGO" />

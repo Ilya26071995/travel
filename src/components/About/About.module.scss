@@ -1,5 +1,4 @@
 .text {
-  color: #fff;
   font-size: 80px;
   font-family: "Quicksand", sans-serif;
   font-weight: bold;
@@ -11,4 +10,13 @@
   margin: 0 auto;
   text-align: center;
   padding: 200px 0;
+  color: white;
+}
+
+.containerDark {
+  width: 60%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 200px 0;
+  color: black;
 }

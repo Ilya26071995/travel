@@ -1,8 +1,9 @@
 import React from "react";
 import s from "./Footer.module.scss";
-import { NavType } from "../../Types";
+import { NavType, ThemeState } from "../../Types";
 import { t } from "i18next";
 import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
 
 const SOCIAL = [
   { img: "../img/vk.svg", link: "https://www.vk.com", alt: "vk" },
@@ -21,8 +22,11 @@ const Footer = () => {
     { name: t("partners"), link: "#" },
   ];
 
+  const dispatch = useDispatch();
+  const { Theme } = useSelector((state: ThemeState) => state);
+
   return (
-    <div className={s.container}>
+    <div className={Theme.type ? s.container : s.containerDark}>
       <Link to="/">
         <img className={s.logo} src="../img/logo.svg" alt="LOGO" />
       </Link>
@@ -30,7 +34,7 @@ const Footer = () => {
         {LINKS.map(({ name, link }: NavType, index) => {
           return (
             <li className={s.item} key={index}>
-              <a href={link} className={s.link}>
+              <a href={link} className={Theme.type ? s.link : s.linkDark}>
                 {name}
               </a>
             </li>

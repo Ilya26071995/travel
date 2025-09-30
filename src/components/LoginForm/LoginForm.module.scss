@@ -5,7 +5,17 @@
   text-align: center;
   padding: 50px;
   gap: 50px;
-  margin-bottom: 50px;
+}
+
+.containerDark {
+  display: flex;
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+  text-align: center;
+  padding: 50px;
+  gap: 50px;
+  background-color: black;
+  color: white;
 }
 
 .form {
@@ -13,6 +23,18 @@
   flex-direction: column;
   gap: 50px;
   border: 1px solid black;
+  width: 500px;
+  margin: 0 auto;
+  padding: 50px 0;
+  border-radius: 10px;
+  align-items: center;
+}
+
+.formDark {
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+  border: 1px solid white;
   width: 500px;
   margin: 0 auto;
   padding: 50px 0;
@@ -34,6 +56,17 @@
   border-radius: 5px;
   padding: 0 5px;
 }
+
+.inputDark {
+  width: 400px;
+  margin: 0 auto;
+  border-radius: 5px;
+  padding: 0 5px;
+  background-color: black;
+  border-color: white;
+  color: white;
+}
+
 .input,
 .textarea {
   border-radius: 5px;
@@ -93,7 +126,20 @@
   gap: 30px;
   border: 1px solid black;
   border-radius: 5px;
-  max-width: 500px;
+  width: 500px;
+  padding: 50px 0;
+  text-align: center;
+  align-items: center;
+}
+.successDark {
+  display: flex;
+  flex-direction: column;
+  font-family: "Quicksand", sans-serif;
+  margin: 50px auto;
+  gap: 30px;
+  border: 1px solid white;
+  border-radius: 5px;
+  width: 500px;
   padding: 50px 0;
   text-align: center;
   align-items: center;

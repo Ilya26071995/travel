@@ -6,6 +6,15 @@
   flex-direction: column;
   gap: 50px;
 }
+.containerDark {
+  font-family: "Quicksand", sans-serif;
+  display: flex;
+  position: relative;
+  padding: 50px;
+  flex-direction: column;
+  gap: 50px;
+  background-color: black;
+}
 
 .form {
   display: flex;
@@ -21,6 +30,23 @@
   position: absolute;
   top: 400px;
   left: 500px;
+  color: black;
+}
+.formDark {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 350px;
+  border: 1px solid white;
+  text-align: center;
+  align-items: center;
+  padding: 20px 0;
+  border-radius: 5px;
+  background-color: black;
+  position: absolute;
+  top: 400px;
+  left: 500px;
+  color: white;
 }
 
 .label {
@@ -34,6 +60,14 @@
   width: 300px;
   border-radius: 5px;
   padding: 2px;
+}
+.inputDark {
+  width: 300px;
+  border-radius: 5px;
+  padding: 2px;
+  background-color: black;
+  border-color: white;
+  color: white;
 }
 
 .title {
@@ -55,6 +89,17 @@
   padding: 5px 20px;
   margin-top: 20px;
   width: 200px;
+}
+.miniTripDark {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  border: 1px solid white;
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-top: 20px;
+  width: 200px;
+  color: white;
 }
 
 .item {

@@ -3,12 +3,14 @@ import notesSlice from "./slices/notes.slice";
 import myInfoSlice from "./slices/mymyInfo.slice";
 import loginSlice from "./slices/login.slice";
 import tripsSlice from "./slices/trip.slice";
+import toggleThemeSlice from "./slices/toggleTheme.slice";
 
 const reducers = combineReducers({
   Notes: notesSlice,
   Info: myInfoSlice,
   Form: loginSlice,
   Trips: tripsSlice,
+  Theme: toggleThemeSlice,
 });
 
 export const store = configureStore({

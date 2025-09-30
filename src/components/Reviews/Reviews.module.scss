@@ -7,7 +7,16 @@
   display: flex;
   justify-content: space-between;
   font-family: "Quicksand", sans-serif;
-  margin-bottom: 100px;
+  padding-bottom: 100px;
+}
+
+.containerDark {
+  padding: 0 50px;
+  display: flex;
+  justify-content: space-between;
+  font-family: "Quicksand", sans-serif;
+  padding-bottom: 100px;
+  background-color: black;
 }
 
 .review {
@@ -18,6 +27,17 @@
   border: 1px solid black;
   border-radius: 20px;
   padding: 20px 10px;
+}
+
+.reviewDark {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0px 50px;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 20px 10px;
+  color: white;
 }
 
 .text {

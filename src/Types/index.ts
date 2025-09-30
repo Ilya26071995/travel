@@ -31,6 +31,14 @@ export interface MyFormState {
   Form: { name: string; mail: string; type: boolean };
 }
 
+export interface ThemeState {
+  Theme: { type: boolean };
+}
+
+export interface ThemeType {
+  type: boolean;
+}
+
 export interface FormType {
   name: string;
   mail: string;

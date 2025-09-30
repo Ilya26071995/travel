@@ -5,6 +5,8 @@ import { Button } from "../Button/Index";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { RegistrationSchema } from "../../validation";
+import { useDispatch, useSelector } from "react-redux";
+import { ThemeState } from "../../Types";
 
 const RegistrationForm = () => {
   const {
@@ -22,17 +24,23 @@ const RegistrationForm = () => {
     reset();
   };
 
+  const dispatch = useDispatch();
+  const { Theme } = useSelector((state: ThemeState) => state);
+
   return (
-    <div className={s.container}>
+    <div className={Theme.type ? s.container : s.containerDark}>
       <h2 className={s.title}>{t("registration")}</h2>
-      <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
+      <form
+        className={Theme.type ? s.form : s.formDark}
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <label className={s.label}>
           {" "}
           {t("Ymail")}
           <input
             {...register("mail")}
             type="text"
-            className={s.input}
+            className={Theme.type ? s.input : s.inputDark}
             placeholder={t("Ymail")}
           />
         </label>
@@ -42,7 +50,7 @@ const RegistrationForm = () => {
           <input
             {...register("password")}
             type="text"
-            className={s.input}
+            className={Theme.type ? s.input : s.inputDark}
             placeholder={t("password")}
           />
         </label>

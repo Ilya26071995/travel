@@ -3,7 +3,7 @@ import s from "./MyInfo.module.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { MyInfoSchema } from "../../validation";
-import { InfoState, MyInfoType } from "../../Types";
+import { InfoState, MyInfoType, ThemeState } from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
 import { EnterProfile } from "../../store/slices/mymyInfo.slice";
@@ -12,6 +12,7 @@ import { t } from "i18next";
 const MyInfo = () => {
   const dispatch = useDispatch();
   const { Info } = useSelector((state: InfoState) => state);
+  const { Theme } = useSelector((state: ThemeState) => state);
 
   const {
     register,
@@ -43,34 +44,34 @@ const MyInfo = () => {
   };
 
   return Info.type === 2 ? (
-    <div className={s.bigContainer}>
-      <ul className={s.profile}>
-        <li className={s.item}>
+    <div className={Theme.type ? s.bigContainer : s.bigContainerDark}>
+      <ul className={Theme.type ? s.profile : s.profileDark}>
+        <li className={Theme.type ? s.item : s.itemDark}>
           <h3 className={s.head}>{t("name")}</h3> {Info.name}
         </li>
-        <li className={s.item}>
+        <li className={Theme.type ? s.item : s.itemDark}>
           {" "}
           <h3 className={s.head}>{t("age")}</h3> {Info.age}
         </li>
-        <li className={s.item}>
+        <li className={Theme.type ? s.item : s.itemDark}>
           <h3 className={s.head}>{t("city")}</h3> {Info.city}
         </li>
-        <li className={s.item}>
+        <li className={Theme.type ? s.item : s.itemDark}>
           <h3 className={s.head}>{t("yourself")}</h3>
           {Info.text}
         </li>
       </ul>
     </div>
   ) : (
-    <div className={s.bigContainer}>
-      <div className={s.container}>
+    <div className={Theme.type ? s.bigContainer : s.bigContainerDark}>
+      <div className={Theme.type ? s.container : s.containerDark}>
         <h2 className={s.title}>{t("information")}</h2>
         <form className={s.form} onSubmit={handleSubmit(onSubmit)}>
           <label className={s.label}>
             {t("Yname")}
             <input
               {...register("name")}
-              className={s.input}
+              className={Theme.type ? s.input : s.inputDark}
               type="text"
               placeholder={t("Yname")}
               value={profile.name}
@@ -82,7 +83,7 @@ const MyInfo = () => {
             {t("Yage")}
             <input
               {...register("age")}
-              className={s.input}
+              className={Theme.type ? s.input : s.inputDark}
               type="text"
               placeholder={t("Yage")}
               value={profile.age}
@@ -94,7 +95,7 @@ const MyInfo = () => {
             {t("Ycity")}
             <input
               {...register("city")}
-              className={s.input}
+              className={Theme.type ? s.input : s.inputDark}
               type="text"
               placeholder={t("Ycity")}
               value={profile.city}
@@ -106,7 +107,7 @@ const MyInfo = () => {
             {t("yourself")}
             <textarea
               {...register("text")}
-              className={s.textarea}
+              className={Theme.type ? s.textarea : s.textareaDark}
               placeholder={t("yourself")}
               value={profile.text}
               onChange={(e) => setProfile({ ...profile, text: e.target.value })}
