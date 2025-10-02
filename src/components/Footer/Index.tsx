@@ -3,7 +3,7 @@ import s from "./Footer.module.scss";
 import { NavType, ThemeState } from "../../Types";
 import { t } from "i18next";
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const SOCIAL = [
   { img: "../img/vk.svg", link: "https://www.vk.com", alt: "vk" },
@@ -22,7 +22,6 @@ const Footer = () => {
     { name: t("partners"), link: "#" },
   ];
 
-  const dispatch = useDispatch();
   const { Theme } = useSelector((state: ThemeState) => state);
 
   return (

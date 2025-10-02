@@ -33,14 +33,12 @@ const MyInfo = () => {
   });
 
   const onSubmit = (data: any) => {
-    console.log(data);
     reset();
   };
 
   const click = () => {
     setProfile({ ...profile, type: 2 });
     dispatch(EnterProfile(profile));
-    console.log(profile);
   };
 
   return Info.type === 2 ? (

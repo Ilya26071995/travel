@@ -21,7 +21,7 @@ const TripsBlock = () => {
 
   const handleSubmit = (e: { preventDefault: () => void }) => {
     e.preventDefault();
-    console.log(Trips);
+
     setTrip({
       city: "",
       date: "",

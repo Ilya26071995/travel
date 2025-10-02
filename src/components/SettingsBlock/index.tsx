@@ -4,11 +4,7 @@ import { Button } from "../Button/Index";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { ThemeState } from "../../Types";
-import {
-  toggleTheme,
-  toggleThemeSlice,
-} from "../../store/slices/toggleTheme.slice";
-import { set } from "react-hook-form";
+import { toggleTheme } from "../../store/slices/toggleTheme.slice";
 
 const SettingsBlock = () => {
   const { t, i18n } = useTranslation();
@@ -21,7 +17,7 @@ const SettingsBlock = () => {
   const dispatch = useDispatch();
   const { Theme } = useSelector((state: ThemeState) => state);
 
-  const [themeDark, setThemeDark] = useState({ type: true });
+  const [themeDark] = useState({ type: true });
 
   const newTheme = () => {
     dispatch(toggleTheme(themeDark));

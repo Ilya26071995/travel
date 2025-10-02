@@ -33,13 +33,11 @@ const LoginForm = () => {
     resolver: yupResolver(FormSchema),
   });
   const onSubmit = (data: any) => {
-    console.log(data);
     reset();
   };
 
   const clickFun = () => {
     dispatch(EnterForm(myForm));
-    console.log(myForm);
   };
 
   const exitFun = () => {

@@ -5,7 +5,7 @@ const FullTrip = () => {
   return (
     <div className={s.container}>
       <div>
-        <p>penis</p>
+        <p></p>
       </div>
     </div>
   );

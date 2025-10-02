@@ -12,7 +12,6 @@ export const toggleThemeSlice = createSlice({
       payload.type
         ? (state.type = payload.type = false)
         : (state.type = payload.type = true);
-      console.log(state.type);
     },
   },
 });

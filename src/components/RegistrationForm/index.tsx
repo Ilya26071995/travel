@@ -20,7 +20,6 @@ const RegistrationForm = () => {
   });
 
   const onSubmit = (data: any) => {
-    console.log(data);
     reset();
   };
 

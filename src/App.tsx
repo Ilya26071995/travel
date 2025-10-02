@@ -8,7 +8,6 @@ import { Profile } from "./pages/profile";
 import { Settings } from "./pages/settings";
 
 import { Trips } from "./pages/trips";
-import { Reservations } from "./pages/reservations";
 
 function App() {
   return (

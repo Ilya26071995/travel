@@ -1,11 +1,10 @@
 import React from "react";
 import s from "./Reviews.module.scss";
 import { t } from "i18next";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import { ThemeState } from "../../Types";
 
 const Reviews = () => {
-  const dispatch = useDispatch();
   const { Theme } = useSelector((state: ThemeState) => state);
 
   const PEOPLE = [
