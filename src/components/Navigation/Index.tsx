@@ -1,26 +1,24 @@
-import React, { useEffect, useState, useTransition } from "react";
-import { NavType, ThemeState } from "../../Types";
+import React from "react";
+import { ThemeState } from "../../Types";
 import { Link } from "react-router-dom";
 import s from "./Navigation.module.scss";
 import { useTranslation } from "react-i18next";
 import i18next from "../../i18n";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 i18next.t("my.key");
 
 const Navigation = () => {
-  const { i18n, t } = useTranslation();
+  const { t } = useTranslation();
 
   const NAVIGATION = [
     { name: t("home"), link: "/" },
     { name: t("trips"), link: "/trips" },
-    { name: t("reservations"), link: "/reservations" },
     { name: t("notes"), link: "/notes" },
     { name: t("profile"), link: "/profile" },
     { name: t("settings"), link: "/settings" },
     { name: t("login"), link: "/login" },
   ];
 
-  const dispatch = useDispatch();
   const { Theme } = useSelector((state: ThemeState) => state);
 
   return (

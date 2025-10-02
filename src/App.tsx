@@ -32,9 +32,6 @@ function App() {
         <Route exact path="/trips">
           <Trips />
         </Route>
-        <Route exact path="/reservations">
-          <Reservations />
-        </Route>
       </Router>
     </div>
   );

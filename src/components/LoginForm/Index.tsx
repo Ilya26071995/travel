@@ -8,9 +8,7 @@ import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
 import { EnterForm, ExitForm } from "../../store/slices/login.slice";
 import { t } from "i18next";
-import { Link } from "react-router-dom";
 import { RegistrationForm } from "../RegistrationForm";
-import Input from "react-select/dist/declarations/src/components/Input";
 
 const LoginForm = () => {
   const dispatch = useDispatch();
