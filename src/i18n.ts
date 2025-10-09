@@ -55,6 +55,7 @@ const resources = {
       registration: "Registration",
       account: "do not have an account",
       password: "Password",
+      success: "You have successfully registered",
     },
   },
   ru: {
@@ -110,6 +111,7 @@ const resources = {
       registration: "Регистрация",
       account: "не имеете аккаунта",
       password: "Пароль",
+      success: "Вы успешно зарегистрировались",
     },
   },
 };
