@@ -45,7 +45,7 @@ function App() {
             <Notes />
           </RequireAuth>
         </Route>
-        <Route path="/profile">
+        <Route path="/dashboard">
           <RequireAuth>
             <Profile />
           </RequireAuth>
@@ -59,9 +59,6 @@ function App() {
           <RequireAuth>
             <Trips />
           </RequireAuth>
-        </Route>
-        <Route path="/dashboard">
-          <FormOk />
         </Route>
       </Router>
     </div>

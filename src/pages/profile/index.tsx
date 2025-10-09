@@ -1,13 +1,14 @@
 import React from "react";
 import { ImageBlock } from "../../components/ImageBlock/Index";
 import { Footer } from "../../components/Footer/Index";
-import { MyInfo } from "../../components/MyInfo";
+
+import { FormOk } from "../../components/FormOk";
 
 const Profile = () => {
   return (
     <div>
       <ImageBlock />
-      <MyInfo />
+      <FormOk />
       <Footer />
     </div>
   );

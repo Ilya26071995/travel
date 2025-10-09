@@ -23,10 +23,14 @@ const LogForm = () => {
       <div className={Theme.type ? s.container : s.containerDark}>
         <LoginForm />
         <div className={s.button}>
-          <Button
-            title="registration"
-            click={() => setRegistration(!registration)}
-          />
+          {Userfront.tokens.accessToken ? (
+            ""
+          ) : (
+            <Button
+              title="registration"
+              click={() => setRegistration(!registration)}
+            />
+          )}
         </div>
       </div>
     );

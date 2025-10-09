@@ -30,7 +30,7 @@ const Header = () => {
   return (
     <div className={s.container} style={navStyle}>
       <div>
-        <Link to="/">
+        <Link to="/home">
           <img className={s.logo} src="../img/logo.svg" alt="LOGO" />
         </Link>
       </div>

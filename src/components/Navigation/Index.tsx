@@ -14,10 +14,9 @@ const Navigation = () => {
     { name: t("home"), link: "/home" },
     { name: t("trips"), link: "/trips" },
     { name: t("notes"), link: "/notes" },
-    { name: t("profile"), link: "/profile" },
+    { name: t("profile"), link: "/dashboard" },
     { name: t("settings"), link: "/settings" },
     { name: t("login"), link: "/login" },
-    { name: "dash", link: "/dashboard" },
   ];
 
   const { Theme } = useSelector((state: ThemeState) => state);

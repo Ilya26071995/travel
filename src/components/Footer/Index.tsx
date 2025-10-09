@@ -26,7 +26,7 @@ const Footer = () => {
 
   return (
     <div className={Theme.type ? s.container : s.containerDark}>
-      <Link to="/">
+      <Link to="/home">
         <img className={s.logo} src="../img/logo.svg" alt="LOGO" />
       </Link>
       <ul className={s.links}>
