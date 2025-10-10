@@ -6,6 +6,8 @@ import { addTrip, removeTrip } from "../../store/slices/trip.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { ThemeState, TripsState } from "../../Types";
 import { Link } from "react-router-dom";
+import { FullTrip } from "../FullTrip";
+import { NotesBlock } from "../NotesBlock/Index";
 
 const TripsBlock = () => {
   const [trip, setTrip] = useState({
@@ -31,6 +33,12 @@ const TripsBlock = () => {
   };
 
   const [modal, setModal] = useState(false);
+
+  const [fullTrip, setFullTrip] = useState(false);
+
+  const showFullTrip = () => {
+    setFullTrip(!fullTrip);
+  };
 
   const showModal = () => {
     setModal(!modal);
@@ -101,12 +109,34 @@ const TripsBlock = () => {
               <p>{item.hotel}</p>
             </div>
             <div className={s.button}>
-              <Link to="/bigtrip">{t("fullPage")}</Link>
+              <Button title={t("fullPage")} click={showFullTrip} />
               <Button
                 title={t("remove")}
                 click={() => dispatch(removeTrip(item))}
               />
             </div>
+            {
+              <div className={fullTrip ? s.fullContainer : s.block}>
+                <div className={Theme ? s.tripContainer : s.tripContainerDark}>
+                  <ul className={s.trips}>
+                    <li className={s.tripItem}>
+                      <h3 className={s.tripTitle}>{t("city")}:</h3>
+                      <p className={s.tripText}>{item.city}</p>
+                    </li>
+                    <li className={s.tripItem}>
+                      <h3 className={s.tripTitle}>{t("date")}:</h3>
+                      <p className={s.tripText}>{item.date}</p>
+                    </li>
+                    <li className={s.tripItem}>
+                      <h3 className={s.tripTitle}>{t("hotel")}:</h3>
+                      <p className={s.tripText}>{item.hotel}</p>
+                    </li>
+                    <Button title={t("close")} click={showFullTrip} />
+                  </ul>
+                  <NotesBlock />
+                </div>
+              </div>
+            }
           </div>
         ))}
       </div>

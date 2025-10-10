@@ -128,3 +128,53 @@
   left: 0;
   height: 1000px;
 }
+.fullContainer {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  top: -570px;
+  left: 0;
+  height: 1200px;
+  display: flex;
+}
+
+.tripContainer {
+  display: flex;
+  gap: 20px;
+  border: 1px solid black;
+  border-radius: 5px;
+  padding: 5px 20px;
+  margin-top: 20px;
+  width: 1000px;
+  position: absolute;
+  top: 500px;
+  left: 300px;
+  background-color: white;
+}
+
+.trips {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  list-style: none;
+  margin-top: 70px;
+}
+
+.tripTitle,
+.tripText {
+  margin: 0;
+  padding: 0;
+}
+
+.tripTitle {
+  font-size: 28px;
+}
+
+.tripText {
+  font-size: 20px;
+}
+.tripItem {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
