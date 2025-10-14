@@ -15,7 +15,7 @@ const TripCardMini = ({ item }: MiniTripType) => {
     setFullTrip(!fullTrip);
   };
   return (
-    <div>
+    <div className={!Theme.type ? s.containerDark : s.container}>
       <div className={s.item}>
         <h3>{t("city")}:</h3>
         <p>{item.city}</p>
