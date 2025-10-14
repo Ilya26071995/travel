@@ -1,0 +1,63 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: white;
+}
+.containerDark {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 50px;
+  background-color: black;
+}
+
+.bigContainer {
+  background-color: rgba(0, 0, 0, 0.5);
+  font-family: "Quicksand", sans-serif;
+  font-size: 25px;
+  height: 1220px;
+}
+
+.modal {
+  display: flex;
+  background-color: white;
+  width: 1100px;
+  position: absolute;
+  top: 600px;
+  left: 200px;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.modalDark {
+  background-color: black;
+  color: white;
+  display: flex;
+  width: 1100px;
+  position: absolute;
+  top: 600px;
+  left: 200px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.itemList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.itemListDark {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  background-color: black;
+}

@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import s from "./TripsBlock.module.scss";
 import { Button } from "../Button/Index";
 import { t } from "i18next";
-import { addTrip, removeTrip } from "../../store/slices/trip.slice";
+import { addTrip } from "../../store/slices/trip.slice";
 import { useDispatch, useSelector } from "react-redux";
 import { ThemeState, TripsState } from "../../Types";
-import { Link } from "react-router-dom";
-import { FullTrip } from "../FullTrip";
-import { NotesBlock } from "../NotesBlock/Index";
+import { TripCardMini } from "../TripCardMini/Index";
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useForm } from "react-hook-form";
+import { TripSchema } from "../../validation";
 
 const TripsBlock = () => {
   const [trip, setTrip] = useState({
@@ -21,33 +22,28 @@ const TripsBlock = () => {
   const { Trips } = useSelector((state: TripsState) => state);
   const { Theme } = useSelector((state: ThemeState) => state);
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+  const onSubmit = () => {
+    dispatch(addTrip(trip));
+    setModal(!modal);
 
-    setTrip({
-      city: "",
-      date: "",
-      hotel: "",
-      id: Date.now(),
-    });
+    reset();
   };
 
   const [modal, setModal] = useState(false);
-
-  const [fullTrip, setFullTrip] = useState(false);
-
-  const showFullTrip = () => {
-    setFullTrip(!fullTrip);
-  };
 
   const showModal = () => {
     setModal(!modal);
   };
 
-  const closeModal = () => {
-    dispatch(addTrip(trip));
-    setModal(!modal);
-  };
+  const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors },
+  } = useForm({
+    mode: "onChange",
+    resolver: yupResolver(TripSchema),
+  });
 
   return (
     <div className={Theme.type ? s.container : s.containerDark}>
@@ -57,86 +53,62 @@ const TripsBlock = () => {
       <div className={modal ? s.modal : s.block}>
         <form
           className={Theme.type ? s.form : s.formDark}
-          onSubmit={handleSubmit}
+          onSubmit={handleSubmit(onSubmit)}
         >
           <h2 className={s.title}>{t("infoTrip")}</h2>
           <label className={s.label}>
             {t("city")}
             <input
+              {...register("city")}
               className={Theme.type ? s.input : s.inputDark}
               type="text"
               placeholder={t("city")}
               onChange={(e) => setTrip({ ...trip, city: e.target.value })}
               value={trip.city}
             />
+            <p className={s.error}>{errors.city?.message}</p>
           </label>
           <label className={s.label}>
             {t("date")}
             <input
+              {...register("date")}
               className={Theme.type ? s.input : s.inputDark}
               type="text"
               placeholder={t("date")}
               onChange={(e) => setTrip({ ...trip, date: e.target.value })}
               value={trip.date}
             />
+            <p className={s.error}>{errors.date?.message}</p>
           </label>
           <label className={s.label}>
             {t("hotel")}
             <input
+              {...register("hotel")}
               className={Theme.type ? s.input : s.inputDark}
               type="text"
               placeholder={t("hotel")}
               onChange={(e) => setTrip({ ...trip, hotel: e.target.value })}
               value={trip.hotel}
             />
+            <p className={s.error}>{errors.hotel?.message}</p>
           </label>
-          <Button type="submit" title={t("send")} click={closeModal} />
+
+          <input
+            type="submit"
+            value={t("send")}
+            className={!Theme.type ? s.buttonDark : s.button}
+          />
+          <Button
+            type="submit"
+            title={t("close")}
+            click={() => setModal(!modal)}
+          />
         </form>
       </div>
       <div className={s.trip}>
         {Trips.map((item, index) => (
           <div key={index} className={Theme.type ? s.miniTrip : s.miniTripDark}>
-            <div className={s.item}>
-              <h3>{t("city")}:</h3>
-              <p>{item.city}</p>
-            </div>
-            <div className={s.item}>
-              <h3>{t("date")}:</h3>
-              <p>{item.date}</p>
-            </div>
-            <div className={s.item}>
-              <h3>{t("hotel")}:</h3>
-              <p>{item.hotel}</p>
-            </div>
-            <div className={s.button}>
-              <Button title={t("fullPage")} click={showFullTrip} />
-              <Button
-                title={t("remove")}
-                click={() => dispatch(removeTrip(item))}
-              />
-            </div>
-            {
-              <div className={fullTrip ? s.fullContainer : s.block}>
-                <div className={Theme ? s.tripContainer : s.tripContainerDark}>
-                  <ul className={s.trips}>
-                    <li className={s.tripItem}>
-                      <h3 className={s.tripTitle}>{t("city")}:</h3>
-                      <p className={s.tripText}>{item.city}</p>
-                    </li>
-                    <li className={s.tripItem}>
-                      <h3 className={s.tripTitle}>{t("date")}:</h3>
-                      <p className={s.tripText}>{item.date}</p>
-                    </li>
-                    <li className={s.tripItem}>
-                      <h3 className={s.tripTitle}>{t("hotel")}:</h3>
-                      <p className={s.tripText}>{item.hotel}</p>
-                    </li>
-                    <Button title={t("close")} click={showFullTrip} />
-                  </ul>
-                  <NotesBlock />
-                </div>
-              </div>
-            }
+            <TripCardMini item={item} />
           </div>
         ))}
       </div>

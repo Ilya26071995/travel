@@ -59,3 +59,12 @@ export interface TripType {
   hotel: string;
   id?: number;
 }
+
+export interface MiniTripType {
+  item: { city: string; date: string; hotel: string; id?: number };
+}
+
+export interface TripCardType {
+  object: { city: string; date: string; hotel: string };
+  close: () => void;
+}

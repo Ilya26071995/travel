@@ -28,7 +28,7 @@
   border-radius: 5px;
   background-color: white;
   position: absolute;
-  top: 400px;
+  top: 270px;
   left: 500px;
   color: black;
 }
@@ -44,7 +44,7 @@
   border-radius: 5px;
   background-color: black;
   position: absolute;
-  top: 400px;
+  top: 270px;
   left: 500px;
   color: white;
 }
@@ -80,40 +80,10 @@
   gap: 20px;
 }
 
-.miniTrip {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px 20px;
-  margin-top: 20px;
-  width: 200px;
-}
-.miniTripDark {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  border: 1px solid white;
-  border-radius: 5px;
-  padding: 5px 20px;
-  margin-top: 20px;
-  width: 200px;
-  color: white;
-}
-
 .item {
   display: flex;
   align-items: center;
   justify-content: space-between;
-}
-
-.button {
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  margin-bottom: 20px;
 }
 
 .block {
@@ -124,57 +94,53 @@
   position: absolute;
   background-color: rgba(0, 0, 0, 0.5);
   width: 100%;
-  top: -570px;
+  top: -690px;
   left: 0;
-  height: 1000px;
-}
-.fullContainer {
-  position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  top: -570px;
-  left: 0;
-  height: 1200px;
-  display: flex;
-}
-
-.tripContainer {
-  display: flex;
-  gap: 20px;
-  border: 1px solid black;
-  border-radius: 5px;
-  padding: 5px 20px;
-  margin-top: 20px;
-  width: 1000px;
-  position: absolute;
-  top: 500px;
-  left: 300px;
-  background-color: white;
+  height: 950px;
 }
 
 .trips {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  justify-content: space-between;
   list-style: none;
-  margin-top: 70px;
+  margin: 50px 0;
 }
 
-.tripTitle,
-.tripText {
+.button {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  border: 1px solid black;
+  background-color: white;
+}
+
+.button:hover {
+  background-color: black;
+  color: white;
+  cursor: pointer;
+}
+
+.buttonDark {
+  transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  font-size: 20px;
+  background-color: black;
+  border: 1px solid white;
+  color: white;
+}
+
+.buttonDark:hover {
+  background-color: white;
+  color: black;
+  cursor: pointer;
+}
+
+.error {
   margin: 0;
   padding: 0;
-}
-
-.tripTitle {
-  font-size: 28px;
-}
-
-.tripText {
-  font-size: 20px;
-}
-.tripItem {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
 }

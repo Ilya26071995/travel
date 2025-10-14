@@ -57,6 +57,7 @@ const resources = {
       password: "Password",
       success: "You have successfully registered",
       logout: "logout",
+      close: "Close",
     },
   },
   ru: {
@@ -90,7 +91,7 @@ const resources = {
       remove: "удалить",
       name: "имя",
       age: "возраст",
-      city: "город",
+      city: "Город",
       yourself: "Расскажите нам о себе:",
       Yname: "Ваше имя",
       Yage: "Ваш возраст",
@@ -114,6 +115,7 @@ const resources = {
       password: "Пароль",
       success: "Вы успешно зарегистрировались",
       logout: "Выход",
+      close: "Выход",
     },
   },
 };

@@ -43,4 +43,22 @@ const RegistrationSchema = yup.object({
   password: yup.string().min(8, "Min 8 letters"),
 });
 
-export { FormSchema, MyInfoSchema, RegistrationSchema };
+const TripSchema = yup.object({
+  city: yup
+    .string()
+    .required("enter city")
+    .min(2, "Min 4 letters")
+    .max(10, "Max 20 letters")
+    .matches(/^[a-zA-Zа-яА-Я]*$/, "Letters only")
+    .typeError("Enter city"),
+  date: yup.number().typeError("Enter date"),
+  hotel: yup
+    .string()
+    .required("enter hotel")
+    .min(2, "Min 4 letters")
+    .max(10, "Max 20 letters")
+    .matches(/^[a-zA-Zа-яА-Я]*$/, "Letters only")
+    .typeError("Enter hotel"),
+});
+
+export { FormSchema, MyInfoSchema, RegistrationSchema, TripSchema };
