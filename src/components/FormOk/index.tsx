@@ -11,7 +11,7 @@ import { MyInfo } from "../MyInfo";
 
 const FormOk = () => {
   const { Theme } = useSelector((state: ThemeState) => state);
-  const userData = JSON.stringify(Userfront.user, null, 2);
+
   return (
     <div>
       <div className={Theme.type ? s.container : s.containerDark}>

@@ -7,7 +7,7 @@ const Notes = () => {
   return (
     <div>
       <ImageBlock />
-      <NotesBlock />
+      <NotesBlock type={true} />
       <Footer />
     </div>
   );

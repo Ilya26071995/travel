@@ -26,7 +26,7 @@ const TripCard = ({ object, close }: TripCardType) => {
           </ul>
           <Button title={t("close")} click={close} />
         </div>
-        <NotesBlock />
+        <NotesBlock type={false} />
       </div>
     </div>
   );

@@ -25,7 +25,6 @@ const TripsBlock = () => {
   const onSubmit = () => {
     dispatch(addTrip(trip));
     setModal(!modal);
-
     reset();
   };
 

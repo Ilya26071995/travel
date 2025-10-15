@@ -32,13 +32,10 @@ const MyInfo = () => {
     type: 1,
   });
 
-  const onSubmit = (data: any) => {
-    reset();
-  };
-
-  const click = () => {
+  const onSubmit = () => {
     setProfile({ ...profile, type: 2 });
     dispatch(EnterProfile(profile));
+    reset();
   };
 
   return Info.type === 2 ? (
@@ -111,7 +108,12 @@ const MyInfo = () => {
               onChange={(e) => setProfile({ ...profile, text: e.target.value })}
             ></textarea>
           </label>
-          <Button title={t("send")} type="submit" click={click} />
+
+          <input
+            type="submit"
+            value={t("send")}
+            className={!Theme.type ? s.buttonDark : s.button}
+          />
         </form>
       </div>
     </div>

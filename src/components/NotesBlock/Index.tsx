@@ -1,15 +1,27 @@
 import React, { FormEventHandler, useState } from "react";
 import s from "./NotesBlock.module.scss";
-import { NoteState, NotesType, ThemeState } from "../../Types";
+import {
+  BoolType,
+  NoteState,
+  NotesTripState,
+  NotesType,
+  ThemeState,
+} from "../../Types";
 import { Button } from "../Button/Index";
 import { useDispatch, useSelector } from "react-redux";
 import { addNotes, removeNotes } from "../../store/slices/notes.slice";
 import { t } from "i18next";
+import { useForm } from "react-hook-form";
+import {
+  addNotesTrip,
+  removeNotesTrip,
+} from "../../store/slices/tripNote.slice";
 
-const NotesBlock = () => {
+const NotesBlock = (type: BoolType) => {
   const dispatch = useDispatch();
   const { Notes } = useSelector((state: NoteState) => state);
   const { Theme } = useSelector((state: ThemeState) => state);
+  const { NotesTrip } = useSelector((state: NotesTripState) => state);
 
   const [note, setNote] = useState({
     title: "",
@@ -17,9 +29,16 @@ const NotesBlock = () => {
     id: Date.now(),
   });
 
-  const handleSubmit = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
-    () => dispatch(addNotes(note));
+  const {
+    handleSubmit,
+    formState: { errors },
+    reset,
+  } = useForm({
+    mode: "onChange",
+  });
+
+  const onSubmit = () => {
+    type.type ? dispatch(addNotes(note)) : dispatch(addNotesTrip(note));
     setNote({
       title: "",
       text: "",
@@ -31,7 +50,7 @@ const NotesBlock = () => {
     <div className={Theme.type ? s.container : s.containerDark}>
       <div className={Theme.type ? s.noteForm : s.noteFormDark}>
         <h1 className={s.title}>{t("addNote")}</h1>
-        <form onSubmit={handleSubmit} className={s.flex}>
+        <form onSubmit={handleSubmit(onSubmit)} className={s.flex}>
           <label>
             <input
               className={Theme.type ? s.name : s.nameDark}
@@ -49,27 +68,39 @@ const NotesBlock = () => {
               onChange={(e) => setNote({ ...note, text: e.target.value })}
             />
           </label>
-          <div className={s.add}>
-            <Button
-              title={t("addNote")}
-              type="submit"
-              click={() => dispatch(addNotes(note))}
-            />
-          </div>
+          <input
+            type="submit"
+            value={t("addNote")}
+            className={!Theme.type ? s.buttonDark : s.button}
+          />
         </form>
       </div>
-      {Notes.map((not: NotesType, index: number) => (
-        <div key={index} className={Theme.type ? s.note : s.noteDark}>
-          <h3 className={s.noteTitle}>{not.title}</h3>
-          <p className={s.noteText}>{not.text}</p>
-          <div className={s.button}>
-            <Button
-              title={t("remove")}
-              click={() => dispatch(removeNotes(not))}
-            />
-          </div>
-        </div>
-      ))}
+
+      {type.type
+        ? Notes.map((not: NotesType, index: number) => (
+            <div key={index} className={Theme.type ? s.note : s.noteDark}>
+              <h3 className={s.noteTitle}>{not.title}</h3>
+              <p className={s.noteText}>{not.text}</p>
+              <div className={s.but}>
+                <Button
+                  title={t("remove")}
+                  click={() => dispatch(removeNotes(not))}
+                />
+              </div>
+            </div>
+          ))
+        : NotesTrip.map((not: NotesType, index: number) => (
+            <div key={index} className={Theme.type ? s.note : s.noteDark}>
+              <h3 className={s.noteTitle}>{not.title}</h3>
+              <p className={s.noteText}>{not.text}</p>
+              <div className={s.but}>
+                <Button
+                  title={t("remove")}
+                  click={() => dispatch(removeNotesTrip(not))}
+                />
+              </div>
+            </div>
+          ))}
     </div>
   );
 };

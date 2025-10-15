@@ -23,6 +23,14 @@ export interface NoteState {
   Notes: [{ title: string; text: string; id?: number }];
 }
 
+export interface NotesTripState {
+  NotesTrip: [{ title: string; text: string; id?: number }];
+}
+
+export interface BoolType {
+  type: boolean;
+}
+
 export interface InfoState {
   Info: { name: string; age: string; city: string; text: string; type: number };
 }
