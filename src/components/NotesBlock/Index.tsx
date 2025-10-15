@@ -1,4 +1,4 @@
-import React, { FormEventHandler, useState } from "react";
+import React, { useState } from "react";
 import s from "./NotesBlock.module.scss";
 import {
   BoolType,

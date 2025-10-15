@@ -3,7 +3,6 @@ import s from "./Holiday.module.scss";
 import { t } from "i18next";
 import { useSelector } from "react-redux";
 import { ThemeState } from "../../Types";
-import { LoginForm } from "@userfront/toolkit";
 
 const Holiday = () => {
   const { Theme } = useSelector((state: ThemeState) => state);
