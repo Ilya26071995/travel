@@ -23,8 +23,11 @@ const Header = () => {
 
   const navStyle = {
     backgroundColor: backgroundColor,
-    padding: "10px",
+    padding: "25px 50px",
     transition: "background-color 0.3s ease",
+    width: "94%",
+    display: "flex",
+    justifyContent: "space-between",
   };
 
   return (

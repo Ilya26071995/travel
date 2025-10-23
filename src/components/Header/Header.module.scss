@@ -1,9 +1,7 @@
 .container {
+  position: fixed;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 25px 50px;
-  position: sticky;
   top: 0;
 }
 
