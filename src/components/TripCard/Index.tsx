@@ -1,4 +1,3 @@
-import React from "react";
 import { ThemeState, TripCardType } from "../../Types";
 import { Button } from "../Button/Index";
 import s from "./TripCard.module.scss";

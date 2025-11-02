@@ -16,15 +16,15 @@ export interface ButtonType {
 }
 
 export interface TripsState {
-  Trips: [{ city: string; date: string; hotel: string; id?: number }];
+  Trips: { city: string; date: string; hotel: string; id?: number }[];
 }
 
 export interface NoteState {
-  Notes: [{ title: string; text: string; id?: number }];
+  Notes: { title: string; text: string; id?: number }[];
 }
 
 export interface NotesTripState {
-  NotesTrip: [{ title: string; text: string; id?: number }];
+  NotesTrip: { title: string; text: string; id?: number }[];
 }
 
 export interface BoolType {
@@ -63,7 +63,7 @@ export interface MyInfoType {
 
 export interface TripType {
   city: string;
-  date: Date;
+  date: string;
   hotel: string;
   id?: number;
 }
@@ -75,4 +75,28 @@ export interface MiniTripType {
 export interface TripCardType {
   object: { city: string; date: string; hotel: string };
   close: () => void;
+}
+
+export interface InfoPayload {
+  payload: {
+    name: string;
+    age: string;
+    city: string;
+    text: string;
+    type: number;
+  };
+}
+
+export interface NotePayload {
+  payload: {
+    title: string;
+    text: string;
+    id?: number;
+  };
+}
+
+export interface ThemePayload {
+  payload: {
+    type: boolean;
+  };
 }

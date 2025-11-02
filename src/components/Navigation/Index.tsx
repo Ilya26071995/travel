@@ -1,11 +1,9 @@
-import React from "react";
 import { ThemeState } from "../../Types";
 import { Link } from "react-router-dom";
 import s from "./Navigation.module.scss";
 import { useTranslation } from "react-i18next";
-import i18next from "../../i18n";
+
 import { useSelector } from "react-redux";
-i18next.t("my.key");
 
 const Navigation = () => {
   const { t } = useTranslation();

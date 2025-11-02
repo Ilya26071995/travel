@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./About.module.scss";
 import { t } from "i18next";
 import { useSelector } from "react-redux";

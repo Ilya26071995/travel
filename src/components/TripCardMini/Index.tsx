@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import s from "./TripCardMini.module.scss";
 import { MiniTripType, ThemeState } from "../../Types";
 import { t } from "i18next";

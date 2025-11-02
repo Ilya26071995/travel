@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./Button.module.scss";
 import { ButtonType, ThemeState } from "../../Types";
 import { useSelector } from "react-redux";

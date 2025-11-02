@@ -23,9 +23,7 @@ const LogForm = () => {
       <div className={Theme.type ? s.container : s.containerDark}>
         <LoginForm />
         <div className={s.button}>
-          {Userfront.tokens.accessToken ? (
-            ""
-          ) : (
+          {Userfront.tokens.accessToken ? null : (
             <Button
               title="registration"
               click={() => setRegistration(!registration)}

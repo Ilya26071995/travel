@@ -1,4 +1,3 @@
-import React from "react";
 import { ImageBlock } from "../../components/ImageBlock/Index";
 import { LogForm } from "../../components/LoginForm/Index";
 import { Footer } from "../../components/Footer/Index";

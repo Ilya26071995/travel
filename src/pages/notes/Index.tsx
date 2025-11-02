@@ -1,4 +1,3 @@
-import React from "react";
 import { ImageBlock } from "../../components/ImageBlock/Index";
 import { NotesBlock } from "../../components/NotesBlock/Index";
 import { Footer } from "../../components/Footer/Index";

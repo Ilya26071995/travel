@@ -23,7 +23,7 @@ const TripSchema = yup.object({
   city: yup
     .string()
     .required("enter city")
-    .min(2, "Min 4 letters")
+    .min(2, "Min 2 letters")
     .max(10, "Max 20 letters")
     .matches(/^[a-zA-Zа-яА-Я]*$/, "Letters only")
     .typeError("Enter city"),
@@ -31,10 +31,23 @@ const TripSchema = yup.object({
   hotel: yup
     .string()
     .required("enter hotel")
-    .min(2, "Min 4 letters")
-    .max(10, "Max 20 letters")
+    .min(2, "Min 2 letters")
+    .max(10, "Max 10 letters")
     .matches(/^[a-zA-Zа-яА-Я]*$/, "Letters only")
     .typeError("Enter hotel"),
 });
 
-export { MyInfoSchema, TripSchema };
+const NoteSchema = yup.object({
+  title: yup
+    .string()
+    .required("enter title")
+    .min(4, "Min 4 letters")
+    .max(20, "Max 20 letters"),
+  text: yup
+    .string()
+    .required("enter text")
+    .min(10, "Min 10 letters")
+    .max(1000, "Max 1000 letters"),
+});
+
+export { MyInfoSchema, TripSchema, NoteSchema };

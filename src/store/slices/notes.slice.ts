@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { NotesType } from "../../Types";
+import { NotePayload, NotesType } from "../../Types";
 
 const initialState: NotesType[] = [];
 
@@ -7,10 +7,10 @@ export const notesSlice = createSlice({
   name: "Notes",
   initialState,
   reducers: {
-    addNotes: (state, { payload }) => {
+    addNotes: (state, { payload }: NotePayload) => {
       state.push(payload);
     },
-    removeNotes: (state, { payload }) => {
+    removeNotes: (state, { payload }: NotePayload) => {
       return state.filter((item) => item.id !== payload.id);
     },
   },

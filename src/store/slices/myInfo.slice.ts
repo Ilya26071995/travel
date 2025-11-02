@@ -1,6 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { MyInfoType } from "../../Types";
-import { bool, boolean, number } from "yup";
+import { InfoPayload, MyInfoType } from "../../Types";
 
 const initialState: MyInfoType = {
   name: "",
@@ -14,13 +13,13 @@ export const myInfoSlice = createSlice({
   name: "Info",
   initialState,
   reducers: {
-    EnterProfile: (state, { payload }) => ({
+    EnterProfile: (state, { payload }: InfoPayload) => ({
       ...state,
       name: payload.name,
       age: payload.age,
       city: payload.city,
       text: payload.text,
-      type: (payload.type = 2),
+      type: 2,
     }),
   },
 });

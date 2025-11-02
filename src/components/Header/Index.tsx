@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import s from "./Header.module.scss";
 import { Navigation } from "../Navigation/Index";
 import { Link } from "react-router-dom";

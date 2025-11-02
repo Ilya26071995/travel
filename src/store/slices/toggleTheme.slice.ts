@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-import { ThemeType } from "../../Types";
+import { ThemePayload, ThemeType } from "../../Types";
 
 const initialState: ThemeType = { type: true };
 
@@ -8,7 +8,7 @@ export const toggleThemeSlice = createSlice({
   name: "Theme",
   initialState,
   reducers: {
-    toggleTheme: (state, { payload }) => {
+    toggleTheme: (state, { payload }: ThemePayload) => {
       payload.type
         ? (state.type = payload.type = false)
         : (state.type = payload.type = true);

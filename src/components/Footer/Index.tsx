@@ -1,4 +1,3 @@
-import React from "react";
 import s from "./Footer.module.scss";
 import { NavType, ThemeState } from "../../Types";
 import { t } from "i18next";

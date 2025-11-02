@@ -1,7 +1,6 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
 import notesSlice from "./slices/notes.slice";
-import myInfoSlice from "./slices/mymyInfo.slice";
-import loginSlice from "./slices/login.slice";
+import myInfoSlice from "./slices/myInfo.slice";
 import tripsSlice from "./slices/trip.slice";
 import toggleThemeSlice from "./slices/toggleTheme.slice";
 import notesTripSlice from "./slices/tripNote.slice";
@@ -9,7 +8,6 @@ import notesTripSlice from "./slices/tripNote.slice";
 const reducers = combineReducers({
   Notes: notesSlice,
   Info: myInfoSlice,
-  Form: loginSlice,
   Trips: tripsSlice,
   Theme: toggleThemeSlice,
   NotesTrip: notesTripSlice,

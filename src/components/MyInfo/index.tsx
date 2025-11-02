@@ -1,11 +1,11 @@
-import React, { use, useState } from "react";
+import { useState } from "react";
 import s from "./MyInfo.module.scss";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { MyInfoSchema } from "../../validation";
-import { InfoState, MyInfoType, ThemeState } from "../../Types";
+import { InfoState, ThemeState } from "../../Types";
 import { useDispatch, useSelector } from "react-redux";
-import { EnterProfile } from "../../store/slices/mymyInfo.slice";
+import { EnterProfile } from "../../store/slices/myInfo.slice";
 import { t } from "i18next";
 
 const MyInfo = () => {

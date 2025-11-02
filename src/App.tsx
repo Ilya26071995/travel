@@ -1,11 +1,4 @@
-import React from "react";
-
-import {
-  Redirect,
-  Route,
-  BrowserRouter as Router,
-  useHistory,
-} from "react-router-dom";
+import { Route, BrowserRouter as Router, useHistory } from "react-router-dom";
 import { Home } from "./pages/home/Index";
 import { Login } from "./pages/login/Index";
 import { Notes } from "./pages/notes/Index";
@@ -13,15 +6,13 @@ import { Profile } from "./pages/profile";
 import { Settings } from "./pages/settings";
 
 import { Trips } from "./pages/trips";
-import { FormOk } from "./components/FormOk";
 import Userfront from "@userfront/toolkit";
 
 Userfront.init("demo1234");
 
 function RequireAuth({ children }: any) {
+  const history = useHistory();
   if (!Userfront.tokens.accessToken) {
-    const history = useHistory();
-
     return history.push("/login");
   }
 

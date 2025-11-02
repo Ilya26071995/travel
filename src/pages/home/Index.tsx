@@ -1,4 +1,3 @@
-import React from "react";
 import { Footer } from "../../components/Footer/Index";
 import { Holiday } from "../../components/Holiday/Index";
 import { ImageBlock } from "../../components/ImageBlock/Index";
